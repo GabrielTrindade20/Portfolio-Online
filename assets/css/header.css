@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Gurmukhi:wght@100..900&display=swap');
+
+
+.header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.header::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-image: url('/assets/imagens/icons/header.svg');
+}
+
+.photo {
+    width: 200px;
+    height: 200px;
+    border-radius: 150px;
+}
+
+.title {
+    font-family: "Noto Sans Gurmukhi", sans-serif;
+    font-weight: 300;
+    margin-left: 20px;
+}
+
+.information {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+}
+
+.information p {
+    margin: .5rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 1.2rem;
+    width: 1rem;
+    height: 1rem;
+    width: 100%;
+}
+
+
+.information p::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin-right: .5rem;
+}
+
+.information .job::before {
+
+    background-image: url('/assets/imagens/icons/usuario.svg');
+}
+.information .location::before {
+    background-image: url('/assets/imagens/icons/localizacao.svg');
+}
+.information .phone::before {
+
+    background-image: url('/assets/imagens/icons/whatsapp.svg');
+}
+.information .email::before {
+
+    background-image: url('/assets/imagens/icons/email.svg');
+}
+
+
+.icons {
+    width: 1rem;
+    margin-right: 10px;
+}
+
+@media screen and (min-width: 768px) {
+
+    .header {
+        display: grid;
+        grid-template-areas:
+            "photo title"
+            "photo information"
+        ;
+    }
+
+    .photo {
+        grid-area: photo;
+        margin: 0 auto;
+    }
+
+    .title {
+        grid-area: title;
+        text-align: start;
+        max-width: 400px;
+    }
+
+    .information {
+        grid-area: information;
+    }
+}
